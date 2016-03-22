@@ -236,7 +236,7 @@ There are several ways to use the installed tools, from the Docker Quickstart Te
 
 6. Connect your shell to the `my-default` machine.
 
-        C:\Users\mary> eval "$(docker-machine env my-default)"
+        C:\Users\mary> FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd my-default') DO %i
 
 7. Run the `hello-world` container to verify your setup.
 
@@ -266,7 +266,7 @@ There are several ways to use the installed tools, from the Docker Quickstart Te
 
 6. Connect your shell to the `my-default` machine.
 
-        C:\Users\mary> eval "$(docker-machine env my-default)"
+        C:\Users\mary> & docker-machine env --shell powershell my-default | Invoke-Expression
 
 7. Run the `hello-world` container to verify your setup.
 
